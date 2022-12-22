@@ -9,21 +9,24 @@ import SwiftUI
 
 struct NoteCreateAndEditView: View {
     
-    //@EnvironmentObject var coreDataManager: CoreDataManager
-    @StateObject var viewModel: NoteCreateAndEditViewModel
+    @EnvironmentObject var mainViewModel: MainViewModel
+    @State var editTextContent: String
+    var note: Note?
     
     var body: some View {
-        TextEditor(text: viewModel.isNewNote ? $viewModel.newTextContent : $viewModel.editTextContent)
+        TextEditor(text: $editTextContent)
         
             .onDisappear {
-                if viewModel.editTextContent.isEmpty {
-                    print("onDisappear addNote")
-                    viewModel.addNote()
-                } else {
-                    print("onDisappear updateNote")
-                    //print(viewModel.editTextContent)
-                    viewModel.updateNote()
-                }
+                updateNote()
             }
+    }
+    
+    
+    func updateNote() {
+        note?.textContent = editTextContent
+        //        print("note?.textContent \(note.textContent)")
+        CoreDataManager.shared.save()
+        mainViewModel.noteEntitys = CoreDataManager.shared.fetchData()
+        print(mainViewModel.noteEntitys)
     }
 }

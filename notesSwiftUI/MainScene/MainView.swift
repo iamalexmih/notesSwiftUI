@@ -10,34 +10,24 @@ import CoreData
 
 struct MainView: View {
     
-//    @EnvironmentObject var coreDataManager: CoreDataManager
+    //    @EnvironmentObject var coreDataManager: CoreDataManager
     @EnvironmentObject var mainViewModel: MainViewModel
     
     
     var body: some View {
         NavigationView {
-            VStack {
+            ZStack {
                 List {
                     ForEach(mainViewModel.noteEntitys) { note in
-                        NoteCellView(note: note)
-                            .onTapGesture {
-                                mainViewModel.selectedNote = note
-                                mainViewModel.isEditNote.toggle()
-                                mainViewModel.editTextContent = note.textContent ?? "пустая заметка"
-                                print("onTapGesture")
-                            }
-                            .sheet(item: $mainViewModel.selectedNote)  {
-//                                print("isEditNote")
-                            } content: { selectedNote in
-                                NoteCreateAndEditView(
-                                    viewModel: NoteCreateAndEditViewModel(
-                                        newTextContent: "",
-                                        isNewNote: mainViewModel.isNewNote,
-                                        editTextContent: mainViewModel.editTextContent,
-                                        note: selectedNote,
-                                        mainViewModel: mainViewModel
-                                    ))
-                            }
+                        NavigationLink {
+                            NoteCreateAndEditView(editTextContent: note.textContent ?? "пустая",
+                                                  note: note)
+                        } label: {
+                            NoteCellView(note: note)
+                        }
+                        
+                        
+                        
                     }
                     .onDelete(perform: mainViewModel.deleteNote)
                 }
@@ -46,23 +36,29 @@ struct MainView: View {
                         EditButton()
                     }
                 }
-                BottomPanelView(action: addNote)
+                
+                Button (action: addNote) {
+                    Image(systemName: "plus.circle.fill")
+                        .font(.largeTitle)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                .padding()
+                .padding(.trailing, 20)
+
+                //BottomPanelView(action: addNote)
             }
             .navigationTitle("Notes")
             .sheet(isPresented: $mainViewModel.isNewNote) {
-//                mainViewModel.coreDataManager.save()
-//                mainViewModel.updateData()
-            } content: {
-                NoteCreateAndEditView(
-                    viewModel: NoteCreateAndEditViewModel(
-                        newTextContent: mainViewModel.newTextContent,
-                        isNewNote: mainViewModel.isNewNote,
-                        editTextContent: "",
-                        mainViewModel: mainViewModel
-                    ))
+                //                NoteCreateAndEditView(
+                //                    viewModel: NoteCreateAndEditViewModel(
+                //                        newTextContent: mainViewModel.newTextContent,
+                //                        isNewNote: mainViewModel.isNewNote,
+                //                        editTextContent: "",
+                //                        mainViewModel: mainViewModel
+                //                    ))
             }
-           
-
+            
+            
         }
     }
     
@@ -72,15 +68,10 @@ struct MainView: View {
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environmentObject(MainViewModel())
     }
 }

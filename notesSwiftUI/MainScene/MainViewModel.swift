@@ -14,11 +14,11 @@ class MainViewModel: ObservableObject {
     
     @Published var noteEntitys: [Note] = []
     
-    @Published var newTextContent: String = ""
+    var newTextContent: String = ""
     @Published var editTextContent: String = ""
-    @Published var isNewNote: Bool = false
-    @Published var isNewNoteString: String = ""
-    @Published var isEditNote: Bool = false
+    @Published  var isNewNote: Bool = false
+    var isNewNoteString: String = ""
+    var isEditNote: Bool = false
     @Published var selectedNote: Note? = nil
     
     

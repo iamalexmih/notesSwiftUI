@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct notesSwiftUIApp: App {
-//    @StateObject var coreDataManager = CoreDataManager()
     @StateObject var viewModel = MainViewModel()
     var body: some Scene {
         WindowGroup {
