@@ -16,6 +16,7 @@ class CoreDataManager: ObservableObject {
         return persistentContainer.viewContext
     }
     
+    
     init() {
         persistentContainer = NSPersistentContainer(name: "NotesContainer")
         loadPersistentStores()
@@ -30,6 +31,7 @@ class CoreDataManager: ObservableObject {
             }
         }
     }
+    
     
     func save() {
         if viewContext.hasChanges {

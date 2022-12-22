@@ -19,9 +19,9 @@ struct MainView: View {
                     ForEach(mainViewModel.noteEntitys) { note in
                         NavigationLink {
                             NoteCreateAndEditView(
-                                viewModel: NoteCreateAndEditViewModel(note: note),
-                                editTextContent: note.textContent ?? "",
-                                isNewNote: false)
+                                viewModel: NoteCreateAndEditViewModel(note: note,
+                                                                      isNewNote: mainViewModel.isNewNote),
+                                editTextContent: note.textContent ?? "")
                         } label: {
                             NoteCellView(note: note)
                         }
@@ -47,9 +47,9 @@ struct MainView: View {
             }
             .navigationTitle("Notes")
             .sheet(isPresented: $mainViewModel.isNewNote) {
-                NoteCreateAndEditView(viewModel: NoteCreateAndEditViewModel(),
-                                      editTextContent: "",
-                                      isNewNote: mainViewModel.isNewNote)
+                NoteCreateAndEditView(viewModel: NoteCreateAndEditViewModel(
+                        isNewNote: mainViewModel.isNewNote),
+                    editTextContent: "")
             }
         }
     }

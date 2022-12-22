@@ -14,28 +14,31 @@ class NoteCreateAndEditViewModel: ObservableObject {
     @Published var newTextContent: String = ""
     @Published var editTextContent: String
     @Published var note: Note?
+    @Published var isNewNote: Bool
 
+    var coreDataManager = CoreDataManager.shared
     
     
-    init(note: Note? = nil) {
-        self.editTextContent = note?.textContent ?? "что то пощло не так, просто пустая заметка"
+    init(note: Note? = nil, isNewNote: Bool) {
+        self.editTextContent = note?.textContent ?? "что то пошло не так, просто пустая заметка"
         self.note = note
+        self.isNewNote = isNewNote
     }
 
 
     func addNote(mainViewModel: MainViewModel) {
-        let newNote = Note(context: CoreDataManager.shared.viewContext)
+        let newNote = Note(context: coreDataManager.viewContext)
         newNote.textContent = newTextContent
         newNote.timestamp = Date()
-        CoreDataManager.shared.save()
-        mainViewModel.noteEntitys = CoreDataManager.shared.fetchData()
+        coreDataManager.save()
+        mainViewModel.noteEntitys = coreDataManager.fetchData()
     }
-//
-//
-//    func updateNote() {
-//        note?.textContent = editTextContent
-//        coreDataManager.save()
-//        mainViewModel.noteEntitys = coreDataManager.fetchData()
-//    }
-    
+
+
+    func updateNote(mainViewModel: MainViewModel) {
+        note?.textContent = editTextContent
+        note?.timestamp = Date()
+        coreDataManager.save()
+        mainViewModel.noteEntitys = coreDataManager.fetchData()
+    }
 }

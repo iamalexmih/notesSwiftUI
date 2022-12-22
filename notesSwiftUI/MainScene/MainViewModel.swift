@@ -18,7 +18,6 @@ class MainViewModel: ObservableObject {
     
     
     init() {
-//        coreDataManager.deleteAllData()
         updateData()
     }
     

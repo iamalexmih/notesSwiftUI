@@ -13,33 +13,17 @@ struct NoteCreateAndEditView: View {
     @StateObject var viewModel: NoteCreateAndEditViewModel
     
     @State var editTextContent: String
-    @State var isNewNote: Bool
     
     var body: some View {
-        TextEditor(text: isNewNote ? $viewModel.newTextContent : $viewModel.editTextContent)
+        TextEditor(text: viewModel.isNewNote ? $viewModel.newTextContent : $viewModel.editTextContent)
         
             .onDisappear {
                 if editTextContent.isEmpty {
                     viewModel.addNote(mainViewModel: mainViewModel)
                 } else {
-                    updateNote()
+                    viewModel.updateNote(mainViewModel: mainViewModel)
                 }
                 
             }
-    }
-    
-    func addNote() {
-        let newNote = Note(context: CoreDataManager.shared.viewContext)
-        newNote.textContent = viewModel.newTextContent
-        newNote.timestamp = Date()
-        CoreDataManager.shared.save()
-        mainViewModel.noteEntitys = CoreDataManager.shared.fetchData()
-    }
-    
-    
-    func updateNote() {
-        viewModel.note?.textContent = viewModel.editTextContent
-        CoreDataManager.shared.save()
-        mainViewModel.noteEntitys = CoreDataManager.shared.fetchData()
     }
 }
