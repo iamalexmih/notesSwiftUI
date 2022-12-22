@@ -8,9 +8,7 @@
 import CoreData
 
 class CoreDataManager: ObservableObject {
-   
-//    @Published var noteEntitys: [Note] = []
-    
+       
     static let shared = CoreDataManager()
     
     let persistentContainer: NSPersistentContainer

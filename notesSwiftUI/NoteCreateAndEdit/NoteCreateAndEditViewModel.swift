@@ -44,7 +44,6 @@ class NoteCreateAndEditViewModel: ObservableObject {
     
     func updateNote() {
         note?.textContent = editTextContent
-        print("note?.textContent \(note?.textContent)")
         coreDataManager.save()
         mainViewModel.noteEntitys = coreDataManager.fetchData()
     }
