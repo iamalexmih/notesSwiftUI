@@ -8,21 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		B52F5FBB2952F54D00EBF70E /* notesSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52F5FBA2952F54D00EBF70E /* notesSwiftUIApp.swift */; };
-		B52F5FBD2952F54D00EBF70E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52F5FBC2952F54D00EBF70E /* ContentView.swift */; };
+		B52F5FBD2952F54D00EBF70E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52F5FBC2952F54D00EBF70E /* MainView.swift */; };
 		B52F5FBF2952F54F00EBF70E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52F5FBE2952F54F00EBF70E /* Assets.xcassets */; };
 		B52F5FC22952F54F00EBF70E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52F5FC12952F54F00EBF70E /* Preview Assets.xcassets */; };
-		B52F5FC42952F54F00EBF70E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52F5FC32952F54F00EBF70E /* Persistence.swift */; };
-		B52F5FC72952F54F00EBF70E /* notesSwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B52F5FC52952F54F00EBF70E /* notesSwiftUI.xcdatamodeld */; };
+		B52F5FC42952F54F00EBF70E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52F5FC32952F54F00EBF70E /* CoreDataManager.swift */; };
+		B52F5FC72952F54F00EBF70E /* NotesContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B52F5FC52952F54F00EBF70E /* NotesContainer.xcdatamodeld */; };
+		B52F5FCE295354F300EBF70E /* BottomPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52F5FCD295354F300EBF70E /* BottomPanelView.swift */; };
+		B52F5FD0295355EA00EBF70E /* NoteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52F5FCF295355EA00EBF70E /* NoteCellView.swift */; };
+		B5CCE55829536288000A98EB /* NoteCreateAndEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CCE55729536288000A98EB /* NoteCreateAndEditView.swift */; };
+		B5E2923129544B7300ED5767 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E2923029544B7300ED5767 /* MainViewModel.swift */; };
+		B5E29233295451B800ED5767 /* NoteCreateAndEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E29232295451B800ED5767 /* NoteCreateAndEditViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B52F5FB72952F54D00EBF70E /* notesSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notesSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52F5FBA2952F54D00EBF70E /* notesSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notesSwiftUIApp.swift; sourceTree = "<group>"; };
-		B52F5FBC2952F54D00EBF70E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B52F5FBC2952F54D00EBF70E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B52F5FBE2952F54F00EBF70E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B52F5FC12952F54F00EBF70E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B52F5FC32952F54F00EBF70E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		B52F5FC32952F54F00EBF70E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B52F5FC62952F54F00EBF70E /* notesSwiftUI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = notesSwiftUI.xcdatamodel; sourceTree = "<group>"; };
+		B52F5FCD295354F300EBF70E /* BottomPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPanelView.swift; sourceTree = "<group>"; };
+		B52F5FCF295355EA00EBF70E /* NoteCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellView.swift; sourceTree = "<group>"; };
+		B5CCE55729536288000A98EB /* NoteCreateAndEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateAndEditView.swift; sourceTree = "<group>"; };
+		B5E2923029544B7300ED5767 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		B5E29232295451B800ED5767 /* NoteCreateAndEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateAndEditViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +66,10 @@
 			isa = PBXGroup;
 			children = (
 				B52F5FBA2952F54D00EBF70E /* notesSwiftUIApp.swift */,
-				B52F5FBC2952F54D00EBF70E /* ContentView.swift */,
+				B5E2922B295449B300ED5767 /* MainScene */,
+				B5E2922D29544B4700ED5767 /* NoteCreateAndEdit */,
 				B52F5FBE2952F54F00EBF70E /* Assets.xcassets */,
-				B52F5FC32952F54F00EBF70E /* Persistence.swift */,
-				B52F5FC52952F54F00EBF70E /* notesSwiftUI.xcdatamodeld */,
+				B5E2922E29544B5900ED5767 /* CoreData */,
 				B52F5FC02952F54F00EBF70E /* Preview Content */,
 			);
 			path = notesSwiftUI;
@@ -71,6 +81,43 @@
 				B52F5FC12952F54F00EBF70E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B5E2922B295449B300ED5767 /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				B5E2922C295449CA00ED5767 /* NoteCell */,
+				B52F5FBC2952F54D00EBF70E /* MainView.swift */,
+				B5E2923029544B7300ED5767 /* MainViewModel.swift */,
+				B52F5FCD295354F300EBF70E /* BottomPanelView.swift */,
+			);
+			path = MainScene;
+			sourceTree = "<group>";
+		};
+		B5E2922C295449CA00ED5767 /* NoteCell */ = {
+			isa = PBXGroup;
+			children = (
+				B52F5FCF295355EA00EBF70E /* NoteCellView.swift */,
+			);
+			path = NoteCell;
+			sourceTree = "<group>";
+		};
+		B5E2922D29544B4700ED5767 /* NoteCreateAndEdit */ = {
+			isa = PBXGroup;
+			children = (
+				B5CCE55729536288000A98EB /* NoteCreateAndEditView.swift */,
+				B5E29232295451B800ED5767 /* NoteCreateAndEditViewModel.swift */,
+			);
+			path = NoteCreateAndEdit;
+			sourceTree = "<group>";
+		};
+		B5E2922E29544B5900ED5767 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B52F5FC32952F54F00EBF70E /* CoreDataManager.swift */,
+				B52F5FC52952F54F00EBF70E /* NotesContainer.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +190,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B52F5FC42952F54F00EBF70E /* Persistence.swift in Sources */,
-				B52F5FC72952F54F00EBF70E /* notesSwiftUI.xcdatamodeld in Sources */,
-				B52F5FBD2952F54D00EBF70E /* ContentView.swift in Sources */,
+				B52F5FC42952F54F00EBF70E /* CoreDataManager.swift in Sources */,
+				B52F5FCE295354F300EBF70E /* BottomPanelView.swift in Sources */,
+				B52F5FC72952F54F00EBF70E /* NotesContainer.xcdatamodeld in Sources */,
+				B52F5FBD2952F54D00EBF70E /* MainView.swift in Sources */,
+				B52F5FD0295355EA00EBF70E /* NoteCellView.swift in Sources */,
+				B5CCE55829536288000A98EB /* NoteCreateAndEditView.swift in Sources */,
 				B52F5FBB2952F54D00EBF70E /* notesSwiftUIApp.swift in Sources */,
+				B5E2923129544B7300ED5767 /* MainViewModel.swift in Sources */,
+				B5E29233295451B800ED5767 /* NoteCreateAndEditViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +255,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -257,7 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -283,6 +335,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -290,9 +343,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = alexei.poprotskii.notesSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,6 +368,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,9 +376,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = alexei.poprotskii.notesSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -349,13 +409,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		B52F5FC52952F54F00EBF70E /* notesSwiftUI.xcdatamodeld */ = {
+		B52F5FC52952F54F00EBF70E /* NotesContainer.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				B52F5FC62952F54F00EBF70E /* notesSwiftUI.xcdatamodel */,
 			);
 			currentVersion = B52F5FC62952F54F00EBF70E /* notesSwiftUI.xcdatamodel */;
-			path = notesSwiftUI.xcdatamodeld;
+			path = NotesContainer.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
