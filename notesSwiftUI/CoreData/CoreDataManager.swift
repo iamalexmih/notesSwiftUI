@@ -28,7 +28,6 @@ class CoreDataManager: ObservableObject {
                 print("ERROR loading Core Data: \(error!.localizedDescription)")
                 return
             }
-            print("Ok, load Persistent Stores")
         }
     }
     
@@ -36,7 +35,6 @@ class CoreDataManager: ObservableObject {
         if viewContext.hasChanges {
             do {
                 try viewContext.save()
-                print("save")
             } catch {
                 print("An ERROR occurred while save: \(error.localizedDescription)")
             }

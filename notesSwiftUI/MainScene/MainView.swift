@@ -10,9 +10,7 @@ import CoreData
 
 struct MainView: View {
     
-    //    @EnvironmentObject var coreDataManager: CoreDataManager
     @EnvironmentObject var mainViewModel: MainViewModel
-    
     
     var body: some View {
         NavigationView {
@@ -20,15 +18,13 @@ struct MainView: View {
                 List {
                     ForEach(mainViewModel.noteEntitys) { note in
                         NavigationLink {
-                            NoteCreateAndEditView(editTextContent: note.textContent ?? "пустая",
-                                                  newTextContent: "",
-                                                  isNewNote: false,
-                                                  note: note)
+                            NoteCreateAndEditView(
+                                viewModel: NoteCreateAndEditViewModel(note: note),
+                                editTextContent: note.textContent ?? "",
+                                isNewNote: false)
                         } label: {
                             NoteCellView(note: note)
                         }
-                        
-                        
                         
                     }
                     .onDelete(perform: mainViewModel.deleteNote)
@@ -39,28 +35,23 @@ struct MainView: View {
                     }
                 }
                 
-                Button (action: addNote) {
+                Button (action: mainViewModel.addNote) {
                     Image(systemName: "plus.circle.fill")
                         .font(.largeTitle)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
                 .padding()
                 .padding(.trailing, 20)
-
+                
                 //BottomPanelView(action: addNote)
             }
             .navigationTitle("Notes")
             .sheet(isPresented: $mainViewModel.isNewNote) {
-                                NoteCreateAndEditView(editTextContent: "",
-                                                      newTextContent: "",
-                                                      isNewNote: mainViewModel.isNewNote)
+                NoteCreateAndEditView(viewModel: NoteCreateAndEditViewModel(),
+                                      editTextContent: "",
+                                      isNewNote: mainViewModel.isNewNote)
             }
         }
-    }
-    
-    private func addNote() {
-        mainViewModel.newTextContent = ""
-        mainViewModel.isNewNote = true
     }
 }
 

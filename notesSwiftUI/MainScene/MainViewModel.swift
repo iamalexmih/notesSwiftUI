@@ -13,13 +13,8 @@ class MainViewModel: ObservableObject {
     var coreDataManager = CoreDataManager.shared
     
     @Published var noteEntitys: [Note] = []
-    
-    @Published var newTextContent: String = ""
-    @Published var editTextContent: String = ""
-    @Published var isNewNote: Bool = false
-    var isEditNote: Bool = false
-    @Published var selectedNote: Note? = nil
-    
+
+    @Published var isNewNote: Bool = false    
     
     
     init() {
@@ -27,9 +22,15 @@ class MainViewModel: ObservableObject {
         updateData()
     }
     
+    func addNote() {
+        isNewNote.toggle()
+    }
+    
+    
     func updateData() {
         noteEntitys = coreDataManager.fetchData()
     }
+    
     
     func deleteNote(indexSet: IndexSet) {
         guard let index = indexSet.first else { return }

@@ -10,42 +10,32 @@ import Foundation
 
 
 class NoteCreateAndEditViewModel: ObservableObject {
-    
-    var coreDataManager = CoreDataManager.shared
-    
-    @Published var newTextContent: String
-    @Published var isNewNote: Bool
+        
+    @Published var newTextContent: String = ""
     @Published var editTextContent: String
     @Published var note: Note?
-    @Published var mainViewModel: MainViewModel
+
     
     
-    init(newTextContent: String,
-         isNewNote: Bool,
-         editTextContent: String,
-         note: Note? = nil,
-         mainViewModel: MainViewModel) {
-        self.newTextContent = newTextContent
-        self.isNewNote = isNewNote
-        self.editTextContent = editTextContent
+    init(note: Note? = nil) {
+        self.editTextContent = note?.textContent ?? "что то пощло не так, просто пустая заметка"
         self.note = note
-        self.mainViewModel = mainViewModel
     }
 
 
-    func addNote() {
-        let newNote = Note(context: coreDataManager.viewContext)
+    func addNote(mainViewModel: MainViewModel) {
+        let newNote = Note(context: CoreDataManager.shared.viewContext)
         newNote.textContent = newTextContent
         newNote.timestamp = Date()
-        coreDataManager.save()
-        mainViewModel.noteEntitys = coreDataManager.fetchData()
+        CoreDataManager.shared.save()
+        mainViewModel.noteEntitys = CoreDataManager.shared.fetchData()
     }
-    
-    
-    func updateNote() {
-        note?.textContent = editTextContent
-        coreDataManager.save()
-        mainViewModel.noteEntitys = coreDataManager.fetchData()
-    }
+//
+//
+//    func updateNote() {
+//        note?.textContent = editTextContent
+//        coreDataManager.save()
+//        mainViewModel.noteEntitys = coreDataManager.fetchData()
+//    }
     
 }
