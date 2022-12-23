@@ -12,7 +12,7 @@ class MainViewModel: ObservableObject {
     
     var coreDataManager = CoreDataManager.shared
     
-    @Published var noteEntitys: [Note] = []
+    @Published var noteEntitys: [NoteEntity] = []
 
     @Published var isNewNote: Bool = false    
     

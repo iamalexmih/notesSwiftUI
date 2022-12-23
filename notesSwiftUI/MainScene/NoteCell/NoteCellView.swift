@@ -9,27 +9,22 @@ import SwiftUI
 
 struct NoteCellView: View {
     
-    @StateObject var note: Note
+    @StateObject var note: NoteEntity
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Title")
+        VStack(alignment: .leading, spacing: 6) {
+            Text(note.title ?? Date().toString)
                 .font(.headline.bold())
             Text(note.textContent ?? "тут пока ни чего нет")
                 .font(.callout)
+            Spacer()
             HStack {
                 Spacer()
-                Text(note.timestamp?.formatted(date: .numeric, time: .standard) ?? Date().formatted(date: .numeric, time: .standard))
+                Text(note.timestamp?.toString ?? Date().toString)
                     .font(.caption)
+                    .foregroundColor(.gray)
             }
         }
-        .frame(maxWidth: .infinity)
         .background(Color.white)
     }
 }
-
-//struct NoteCellView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NoteCellView()
-//    }
-//}

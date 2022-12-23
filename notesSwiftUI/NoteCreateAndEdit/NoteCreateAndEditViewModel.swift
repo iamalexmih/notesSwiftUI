@@ -13,32 +13,61 @@ class NoteCreateAndEditViewModel: ObservableObject {
         
     @Published var newTextContent: String = ""
     @Published var editTextContent: String
-    @Published var note: Note?
+    @Published var note: NoteEntity?
     @Published var isNewNote: Bool
-
+    @Published var titleNote: String
+    
     var coreDataManager = CoreDataManager.shared
     
     
-    init(note: Note? = nil, isNewNote: Bool) {
+    init(note: NoteEntity? = nil, isNewNote: Bool) {
         self.editTextContent = note?.textContent ?? "что то пошло не так, просто пустая заметка"
         self.note = note
         self.isNewNote = isNewNote
+        
+        if note == nil {
+            self.titleNote = Date().toString
+        } else {
+            self.titleNote = note!.title!
+        }
     }
 
 
     func addNote(mainViewModel: MainViewModel) {
-        let newNote = Note(context: coreDataManager.viewContext)
-        newNote.textContent = newTextContent
-        newNote.timestamp = Date()
-        coreDataManager.save()
-        mainViewModel.noteEntitys = coreDataManager.fetchData()
+        if !newTextContent.isEmpty {
+            let newNote = NoteEntity(context: coreDataManager.viewContext)
+            newNote.textContent = newTextContent
+            newNote.timestamp = Date()
+            if titleNote == ""{
+                titleNote = Date().toString
+            }
+            newNote.title = titleNote
+            coreDataManager.save()
+            mainViewModel.noteEntitys = coreDataManager.fetchData()
+        }
     }
 
 
     func updateNote(mainViewModel: MainViewModel) {
-        note?.textContent = editTextContent
-        note?.timestamp = Date()
-        coreDataManager.save()
-        mainViewModel.noteEntitys = coreDataManager.fetchData()
+        if editTextContent != note?.textContent || titleNote != note?.title {
+            note?.textContent = editTextContent
+            note?.timestamp = Date()
+            if titleNote == ""{
+                titleNote = Date().toString
+            }
+            note?.title = titleNote
+            coreDataManager.save()
+            mainViewModel.noteEntitys = coreDataManager.fetchData()
+        }
+    }
+    
+    
+    func changeButtonBackText() -> Bool {
+        if editTextContent == note?.textContent && titleNote == note?.title {
+            return true
+        } else {
+            return false
+        }
+        
     }
 }

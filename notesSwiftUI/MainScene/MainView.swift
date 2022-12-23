@@ -24,6 +24,8 @@ struct MainView: View {
                                 editTextContent: note.textContent ?? "")
                         } label: {
                             NoteCellView(note: note)
+                                .frame(width: UIScreen.main.bounds.width * 0.8, height: 60)
+                                .padding(.vertical, 5)
                         }
                         
                     }
@@ -45,11 +47,12 @@ struct MainView: View {
                 
                 //BottomPanelView(action: addNote)
             }
-            .navigationTitle("Notes")
+            .navigationTitle("List Notes")
             .sheet(isPresented: $mainViewModel.isNewNote) {
                 NoteCreateAndEditView(viewModel: NoteCreateAndEditViewModel(
                         isNewNote: mainViewModel.isNewNote),
                     editTextContent: "")
+
             }
         }
     }

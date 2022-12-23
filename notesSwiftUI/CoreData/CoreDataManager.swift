@@ -44,9 +44,9 @@ class CoreDataManager: ObservableObject {
     }
     
     
-    func fetchData() -> [Note] {
-        let request: NSFetchRequest<Note> = Note.fetchRequest()
-        var noteEntitys: [Note] = []
+    func fetchData() -> [NoteEntity] {
+        let request: NSFetchRequest<NoteEntity> = NoteEntity.fetchRequest()
+        var noteEntitys: [NoteEntity] = []
         do {
             noteEntitys = try viewContext.fetch(request)
         } catch let error {
@@ -57,7 +57,7 @@ class CoreDataManager: ObservableObject {
     
 
     func deleteAllData() {
-        let request: NSFetchRequest<Note> = Note.fetchRequest()
+        let request: NSFetchRequest<NoteEntity> = NoteEntity.fetchRequest()
         do {
             let allNoteEntitys = try viewContext.fetch(request)
             for note in allNoteEntitys {

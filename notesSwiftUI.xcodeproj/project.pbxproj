@@ -17,6 +17,7 @@
 		B5CCE55829536288000A98EB /* NoteCreateAndEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CCE55729536288000A98EB /* NoteCreateAndEditView.swift */; };
 		B5E2923129544B7300ED5767 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E2923029544B7300ED5767 /* MainViewModel.swift */; };
 		B5E29233295451B800ED5767 /* NoteCreateAndEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E29232295451B800ED5767 /* NoteCreateAndEditViewModel.swift */; };
+		B5E3B83F29558F7600A9245A /* Data+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E3B83E29558F7600A9245A /* Data+ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		B5CCE55729536288000A98EB /* NoteCreateAndEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateAndEditView.swift; sourceTree = "<group>"; };
 		B5E2923029544B7300ED5767 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		B5E29232295451B800ED5767 /* NoteCreateAndEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateAndEditViewModel.swift; sourceTree = "<group>"; };
+		B5E3B83E29558F7600A9245A /* Data+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				B5E2922D29544B4700ED5767 /* NoteCreateAndEdit */,
 				B52F5FBE2952F54F00EBF70E /* Assets.xcassets */,
 				B5E2922E29544B5900ED5767 /* CoreData */,
+				B5E3B83D29558F6300A9245A /* Extention */,
 				B52F5FC02952F54F00EBF70E /* Preview Content */,
 			);
 			path = notesSwiftUI;
@@ -115,6 +118,14 @@
 				B52F5FC52952F54F00EBF70E /* NotesContainer.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		B5E3B83D29558F6300A9245A /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				B5E3B83E29558F7600A9245A /* Data+ext.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +201,7 @@
 				B52F5FC42952F54F00EBF70E /* CoreDataManager.swift in Sources */,
 				B52F5FC72952F54F00EBF70E /* NotesContainer.xcdatamodeld in Sources */,
 				B52F5FBD2952F54D00EBF70E /* MainView.swift in Sources */,
+				B5E3B83F29558F7600A9245A /* Data+ext.swift in Sources */,
 				B52F5FD0295355EA00EBF70E /* NoteCellView.swift in Sources */,
 				B5CCE55829536288000A98EB /* NoteCreateAndEditView.swift in Sources */,
 				B52F5FBB2952F54D00EBF70E /* notesSwiftUIApp.swift in Sources */,
