@@ -63,7 +63,7 @@ struct NoteCellDragGestureView: ViewModifier {
                             .font(.system(size: 25))
                             .foregroundColor(.palette.child)
                     }
-                    .frame(width: 55, height: 110)
+                    .frame(width: 55, height: Size.heightCell)
                     .contentShape(RoundedRectangle(cornerRadius: 15))
                     .onTapGesture {
                         action()

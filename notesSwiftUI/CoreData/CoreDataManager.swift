@@ -43,9 +43,15 @@ class CoreDataManager: ObservableObject {
         }
     }
     
+    private func sortFetchNotes() -> [NSSortDescriptor] {
+        let dataSort = NSSortDescriptor(keyPath: \NoteEntity.timestamp, ascending: false)
+        return [dataSort]
+    }
     
     func fetchData() -> [NoteEntity] {
         let request: NSFetchRequest<NoteEntity> = NoteEntity.fetchRequest()
+        request.sortDescriptors = sortFetchNotes()
+        
         var noteEntitys: [NoteEntity] = []
         do {
             noteEntitys = try viewContext.fetch(request)

@@ -11,26 +11,24 @@ struct NoteCellView: View {
     
     @StateObject var note: NoteEntity
     
-    
-    
-    
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: 8) {
             Text(note.title ?? Date().toString)
                 .font(.headline.bold())
-                .foregroundColor(Color.palette.child.opacity(0.8))
-            Text(note.textContent ?? "тут пока ни чего нет")
+                .foregroundColor(.palette.child.opacity(0.8))
+            Text(note.textContent ?? "empty note")
                 .font(.callout)
-                .foregroundColor(Color.palette.child.opacity(0.7))
-            Spacer()
+                .multilineTextAlignment(.leading)
+                .foregroundColor(.palette.child.opacity(0.9))
             HStack {
                 Spacer()
                 Text(note.timestamp?.toString ?? Date().toString)
                     .font(.caption)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.white.opacity(0.3))
             }
         }
-        .padding()
+        .padding(8)
+        .frame(width: Size.widthCell, height: Size.heightCell)
         .background(Color.palette.child.opacity(0.2))
         .cornerRadius(15)
     }

@@ -10,10 +10,9 @@ import Foundation
 
 class MainViewModel: ObservableObject {
     
-    var coreDataManager = CoreDataManager.shared
+    private var coreDataManager = CoreDataManager.shared
     
     @Published var noteEntitys: [NoteEntity] = []
-
     @Published var isNewNote: Bool = false    
     
     
@@ -36,14 +35,4 @@ class MainViewModel: ObservableObject {
         coreDataManager.save()
         updateData()
     }
-    
-    
-//    func deleteNote(indexSet: IndexSet) {
-//        guard let index = indexSet.first else { return }
-//        let entity = noteEntitys[index]
-//        coreDataManager.viewContext.delete(entity)
-//        coreDataManager.save()
-//        updateData()
-//    }
-    
 }

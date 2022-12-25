@@ -17,7 +17,7 @@ class NoteCreateAndEditViewModel: ObservableObject {
     @Published var isNewNote: Bool
     @Published var titleNote: String
     
-    var coreDataManager = CoreDataManager.shared
+    private var coreDataManager = CoreDataManager.shared
     
     
     init(note: NoteEntity? = nil, isNewNote: Bool) {

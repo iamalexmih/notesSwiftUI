@@ -12,68 +12,62 @@ struct MainView: View {
     
     @EnvironmentObject var mainViewModel: MainViewModel
     
-    let colums: [GridItem] = [
-        GridItem(.flexible())
-    ]
-    
     var body: some View {
         NavigationView {
             ZStack {
-                
-                VStack {
+                VStack(spacing: 15) {
                     Text("List Notes")
                         .font(.title.bold())
-                        .foregroundColor(Color.palette.child)
-                    ScrollView {
-                        LazyVGrid(columns: colums, spacing: 30) {
+                        .foregroundColor(.palette.child.opacity(0.6))
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(spacing: 30) {
                             ForEach(mainViewModel.noteEntitys) { note in
                                 NavigationLink {
                                     NoteCreateAndEditView(
                                         viewModel: NoteCreateAndEditViewModel(note: note,
                                                                               isNewNote: mainViewModel.isNewNote),
                                         editTextContent: note.textContent ?? "")
-                                    
                                 } label: {
                                     NoteCellView(note: note)
-                                        .frame(width: UIScreen.main.bounds.width * 0.9, height: 110)
                                         .swipeDeleteCustomModifier {
                                             mainViewModel.deleteNote(note: note)
                                         }
                                 }
-                                
-                                
                             }
                             .listRowBackground(Color.palette.child)
                         }
-                        
-                        .padding(.top, 50)
+                        .padding(.top, 20)
+                        .padding(.horizontal)
                     }
-                    .padding(.horizontal)
-                    
                 }
-                
-                
-                Button (action: mainViewModel.addNote) {
-                    Image(systemName: "plus.circle.fill")
-                        .font(.largeTitle)
-                        .foregroundColor(Color.palette.child)
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-                .padding()
-                .padding(.trailing, 20)
-                
+                buttonAddNote
             }
-            
             .sheet(isPresented: $mainViewModel.isNewNote) {
-                NoteCreateAndEditView(viewModel: NoteCreateAndEditViewModel(
-                    isNewNote: mainViewModel.isNewNote),
-                                      editTextContent: "")
-                
+                NoteCreateAndEditView(viewModel:
+                                        NoteCreateAndEditViewModel(isNewNote:
+                                                                    mainViewModel.isNewNote),
+                                       editTextContent: "")
             }
             .background(Color.palette.parent.edgesIgnoringSafeArea(.all))
         }
     }
 }
+
+
+
+extension MainView {
+    private var buttonAddNote: some View {
+        Button (action: mainViewModel.addNote) {
+            Image(systemName: "plus.circle.fill")
+                .font(.system(size: 45))
+                .foregroundColor(.palette.child)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+        .padding()
+        .padding(.trailing, 20)
+    }
+}
+
 
 
 struct MainView_Previews: PreviewProvider {
