@@ -11,12 +11,17 @@ struct NoteCellView: View {
     
     @StateObject var note: NoteEntity
     
+    
+    
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             Text(note.title ?? Date().toString)
                 .font(.headline.bold())
+                .foregroundColor(Color.palette.child.opacity(0.8))
             Text(note.textContent ?? "тут пока ни чего нет")
                 .font(.callout)
+                .foregroundColor(Color.palette.child.opacity(0.7))
             Spacer()
             HStack {
                 Spacer()
@@ -25,6 +30,8 @@ struct NoteCellView: View {
                     .foregroundColor(.gray)
             }
         }
-        .background(Color.white)
+        .padding()
+        .background(Color.palette.child.opacity(0.2))
+        .cornerRadius(15)
     }
 }

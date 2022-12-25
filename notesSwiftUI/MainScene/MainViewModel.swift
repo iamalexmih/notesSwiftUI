@@ -31,12 +31,19 @@ class MainViewModel: ObservableObject {
     }
     
     
-    func deleteNote(indexSet: IndexSet) {
-        guard let index = indexSet.first else { return }
-        let entity = noteEntitys[index]
-        coreDataManager.viewContext.delete(entity)
+    func deleteNote(note: NoteEntity) {
+        coreDataManager.viewContext.delete(note)
         coreDataManager.save()
         updateData()
     }
+    
+    
+//    func deleteNote(indexSet: IndexSet) {
+//        guard let index = indexSet.first else { return }
+//        let entity = noteEntitys[index]
+//        coreDataManager.viewContext.delete(entity)
+//        coreDataManager.save()
+//        updateData()
+//    }
     
 }

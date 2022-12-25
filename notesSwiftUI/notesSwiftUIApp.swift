@@ -14,6 +14,7 @@ struct notesSwiftUIApp: App {
         WindowGroup {
             MainView()
                 .environmentObject(viewModel)
+                .preferredColorScheme(.dark)
         }
     }
 }
