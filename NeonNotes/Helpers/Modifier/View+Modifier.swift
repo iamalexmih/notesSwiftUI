@@ -62,6 +62,7 @@ struct NoteCellDragGestureView: ViewModifier {
                         Image(systemName: "trash")
                             .font(.system(size: 25))
                             .foregroundColor(.palette.child)
+                            .shadow(color: .palette.child, radius: 3)
                     }
                     .frame(width: 55, height: Size.heightCell)
                     .contentShape(RoundedRectangle(cornerRadius: 15))

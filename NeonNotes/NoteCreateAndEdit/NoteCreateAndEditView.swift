@@ -25,12 +25,8 @@ struct NoteCreateAndEditView: View {
                 .focused($focusedField, equals: .textEditor)
                 .tint(.palette.child.opacity(0.8))
                 .foregroundColor(.palette.child.opacity(0.9))
-            
-            if viewModel.isNewNote {
-                buttonCloseNewNote
-                    .foregroundColor(.palette.child)
-            }
         }
+
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 buttonBack
@@ -42,8 +38,7 @@ struct NoteCreateAndEditView: View {
             } label: {
                 Text("hide keyboard")
                     .foregroundColor(.palette.child.opacity(0.5))
-                }
-                    
+                }   
             }
         }
         .padding()
@@ -82,7 +77,7 @@ extension NoteCreateAndEditView {
             dismiss()
         } label: {
             Image(systemName: "arrow.down.circle")
-                .font(.system(size: 40))
+                .font(.system(size: 30))
                 .shadow(color: .palette.child, radius: 3)
         }
     }
@@ -92,12 +87,18 @@ extension NoteCreateAndEditView {
         let textNewNote = "Create New Note"
         let textEditNote = "Edit Note"
         
-        Text(isNewNote ? textNewNote : textEditNote)
-            .frame(width: UIScreen.main.bounds.width, alignment: .leading)
-            .font(.title.bold())
-            .padding(.leading, 24)
-            .foregroundColor(.palette.child.opacity(0.8))
-            .shadow(color: .palette.child, radius: 3)
+        HStack {
+            Text(isNewNote ? textNewNote : textEditNote)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .font(.title.bold())
+                .padding(.leading, 24)
+                .foregroundColor(.palette.child.opacity(0.8))
+                .shadow(color: .palette.child, radius: 3)
+            if viewModel.isNewNote {
+                buttonCloseNewNote
+                    .foregroundColor(.palette.child)
+            }
+        }
     }
     
     
