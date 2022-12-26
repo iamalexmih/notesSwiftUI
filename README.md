@@ -6,13 +6,14 @@
     - экран создания заметки.
     - экран редактирования заметки.
 - Стэк: 
-    - MVVM
+    - SwiftUI.
+    - MVVM.
     - Combine.
     - Core Data.
 - Удаление заметок по свайпу влево.
 
 
 <p align="center">
-<img src="" 
+<img src="https://github.com/iamalexmih/notesSwiftUI/blob/main/screenShots/1_mainScreen.png" 
 alt="screenshots main Screen App" width="1000" />
 </p>
