@@ -83,6 +83,7 @@ extension NoteCreateAndEditView {
         } label: {
             Image(systemName: "arrow.down.circle")
                 .font(.system(size: 40))
+                .shadow(color: .palette.child, radius: 3)
         }
     }
     
@@ -111,6 +112,7 @@ extension NoteCreateAndEditView {
             .background(Color.palette.child.opacity(0.13))
             .cornerRadius(10)
             .foregroundColor(.palette.child.opacity(0.8))
+            .shadow(color: .palette.child, radius: 3)
     }
 }
 
