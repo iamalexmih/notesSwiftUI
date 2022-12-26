@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B52F5FBB2952F54D00EBF70E /* notesSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52F5FBA2952F54D00EBF70E /* notesSwiftUIApp.swift */; };
+		B52F5FBB2952F54D00EBF70E /* NeonNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52F5FBA2952F54D00EBF70E /* NeonNotesApp.swift */; };
 		B52F5FBD2952F54D00EBF70E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52F5FBC2952F54D00EBF70E /* MainView.swift */; };
 		B52F5FBF2952F54F00EBF70E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52F5FBE2952F54F00EBF70E /* Assets.xcassets */; };
 		B52F5FC22952F54F00EBF70E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52F5FC12952F54F00EBF70E /* Preview Assets.xcassets */; };
@@ -26,8 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B52F5FB72952F54D00EBF70E /* notesSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notesSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B52F5FBA2952F54D00EBF70E /* notesSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notesSwiftUIApp.swift; sourceTree = "<group>"; };
+		B52F5FB72952F54D00EBF70E /* Neon Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Neon Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B52F5FBA2952F54D00EBF70E /* NeonNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonNotesApp.swift; sourceTree = "<group>"; };
 		B52F5FBC2952F54D00EBF70E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B52F5FBE2952F54F00EBF70E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B52F5FC12952F54F00EBF70E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		B52F5FAE2952F54D00EBF70E = {
 			isa = PBXGroup;
 			children = (
-				B52F5FB92952F54D00EBF70E /* notesSwiftUI */,
+				B52F5FB92952F54D00EBF70E /* NeonNotes */,
 				B52F5FB82952F54D00EBF70E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,15 +67,15 @@
 		B52F5FB82952F54D00EBF70E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B52F5FB72952F54D00EBF70E /* notesSwiftUI.app */,
+				B52F5FB72952F54D00EBF70E /* Neon Notes.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B52F5FB92952F54D00EBF70E /* notesSwiftUI */ = {
+		B52F5FB92952F54D00EBF70E /* NeonNotes */ = {
 			isa = PBXGroup;
 			children = (
-				B52F5FBA2952F54D00EBF70E /* notesSwiftUIApp.swift */,
+				B52F5FBA2952F54D00EBF70E /* NeonNotesApp.swift */,
 				B5E2922B295449B300ED5767 /* MainScene */,
 				B5E2922D29544B4700ED5767 /* NoteCreateAndEdit */,
 				B52F5FBE2952F54F00EBF70E /* Assets.xcassets */,
@@ -84,7 +84,7 @@
 				B5E3B83D29558F6300A9245A /* Extention */,
 				B52F5FC02952F54F00EBF70E /* Preview Content */,
 			);
-			path = notesSwiftUI;
+			path = NeonNotes;
 			sourceTree = "<group>";
 		};
 		B52F5FC02952F54F00EBF70E /* Preview Content */ = {
@@ -178,9 +178,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B52F5FB62952F54D00EBF70E /* notesSwiftUI */ = {
+		B52F5FB62952F54D00EBF70E /* Neon Notes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B52F5FCA2952F54F00EBF70E /* Build configuration list for PBXNativeTarget "notesSwiftUI" */;
+			buildConfigurationList = B52F5FCA2952F54F00EBF70E /* Build configuration list for PBXNativeTarget "Neon Notes" */;
 			buildPhases = (
 				B52F5FB32952F54D00EBF70E /* Sources */,
 				B52F5FB42952F54D00EBF70E /* Frameworks */,
@@ -190,9 +190,9 @@
 			);
 			dependencies = (
 			);
-			name = notesSwiftUI;
+			name = "Neon Notes";
 			productName = notesSwiftUI;
-			productReference = B52F5FB72952F54D00EBF70E /* notesSwiftUI.app */;
+			productReference = B52F5FB72952F54D00EBF70E /* Neon Notes.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -210,7 +210,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B52F5FB22952F54D00EBF70E /* Build configuration list for PBXProject "notesSwiftUI" */;
+			buildConfigurationList = B52F5FB22952F54D00EBF70E /* Build configuration list for PBXProject "Neon Notes" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -223,7 +223,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B52F5FB62952F54D00EBF70E /* notesSwiftUI */,
+				B52F5FB62952F54D00EBF70E /* Neon Notes */,
 			);
 		};
 /* End PBXProject section */
@@ -252,7 +252,7 @@
 				B5A3E6E92958E6CE00CF93A9 /* Size.swift in Sources */,
 				B52F5FD0295355EA00EBF70E /* NoteCellView.swift in Sources */,
 				B5CCE55829536288000A98EB /* NoteCreateAndEditView.swift in Sources */,
-				B52F5FBB2952F54D00EBF70E /* notesSwiftUIApp.swift in Sources */,
+				B52F5FBB2952F54D00EBF70E /* NeonNotesApp.swift in Sources */,
 				B5E2923129544B7300ED5767 /* MainViewModel.swift in Sources */,
 				B5A3E6EF2959AD8E00CF93A9 /* AppStorageManager.swift in Sources */,
 				B55946DA2958ACBB004BA6A2 /* View+Modifier.swift in Sources */,
@@ -386,15 +386,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"notesSwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"NeonNotes/Preview Content\"";
 				DEVELOPMENT_TEAM = 37FQQ4WXUX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Neon Notes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -419,15 +420,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"notesSwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"NeonNotes/Preview Content\"";
 				DEVELOPMENT_TEAM = 37FQQ4WXUX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Neon Notes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -448,7 +450,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B52F5FB22952F54D00EBF70E /* Build configuration list for PBXProject "notesSwiftUI" */ = {
+		B52F5FB22952F54D00EBF70E /* Build configuration list for PBXProject "Neon Notes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B52F5FC82952F54F00EBF70E /* Debug */,
@@ -457,7 +459,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B52F5FCA2952F54F00EBF70E /* Build configuration list for PBXNativeTarget "notesSwiftUI" */ = {
+		B52F5FCA2952F54F00EBF70E /* Build configuration list for PBXNativeTarget "Neon Notes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B52F5FCB2952F54F00EBF70E /* Debug */,

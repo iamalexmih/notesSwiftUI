@@ -19,26 +19,9 @@ struct MainView: View {
                     Text("List Notes")
                         .font(.title.bold())
                         .foregroundColor(.palette.child.opacity(0.6))
-                    ScrollView(.vertical, showsIndicators: false) {
-                        VStack(spacing: 30) {
-                            ForEach(mainViewModel.noteEntitys) { note in
-                                NavigationLink {
-                                    NoteCreateAndEditView(
-                                        viewModel: NoteCreateAndEditViewModel(note: note,
-                                                                              isNewNote: mainViewModel.isNewNote),
-                                        editTextContent: note.textContent ?? "")
-                                } label: {
-                                    NoteCellView(note: note)
-                                        .swipeDeleteCustomModifier {
-                                            mainViewModel.deleteNote(note: note)
-                                        }
-                                }
-                            }
-                            .listRowBackground(Color.palette.child)
-                        }
-                        .padding(.top, 20)
-                        .padding(.horizontal)
-                    }
+                        .shadow(color: .palette.child, radius: 3)
+                
+                    notesScrollView
                 }
                 buttonAddNote
             }
@@ -46,7 +29,7 @@ struct MainView: View {
                 NoteCreateAndEditView(viewModel:
                                         NoteCreateAndEditViewModel(isNewNote:
                                                                     mainViewModel.isNewNote),
-                                       editTextContent: "")
+                                      editTextContent: "")
             }
             .background(Color.palette.parent.edgesIgnoringSafeArea(.all))
         }
@@ -61,10 +44,35 @@ extension MainView {
             Image(systemName: "plus.circle.fill")
                 .font(.system(size: 45))
                 .foregroundColor(.palette.child)
+                .shadow(color: .palette.child, radius: 3)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
         .padding()
         .padding(.trailing, 20)
+    }
+    
+    
+    private var notesScrollView: some View {
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(spacing: 30) {
+                ForEach(mainViewModel.noteEntitys) { note in
+                    NavigationLink {
+                        NoteCreateAndEditView(
+                            viewModel: NoteCreateAndEditViewModel(note: note,
+                                                                  isNewNote: mainViewModel.isNewNote),
+                            editTextContent: note.textContent ?? "")
+                    } label: {
+                        NoteCellView(note: note)
+                            .swipeDeleteCustomModifier {
+                                mainViewModel.deleteNote(note: note)
+                            }
+                    }
+                }
+                .listRowBackground(Color.palette.child)
+            }
+            .padding(.top, 20)
+            .padding(.horizontal)
+        }
     }
 }
 

@@ -96,6 +96,7 @@ extension NoteCreateAndEditView {
             .font(.title.bold())
             .padding(.leading, 24)
             .foregroundColor(.palette.child.opacity(0.8))
+            .shadow(color: .palette.child, radius: 3)
     }
     
     

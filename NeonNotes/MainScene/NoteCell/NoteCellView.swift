@@ -30,6 +30,8 @@ struct NoteCellView: View {
         .padding(8)
         .frame(width: Size.widthCell, height: Size.heightCell)
         .background(Color.palette.child.opacity(0.2))
+        .shadow(color: .palette.child.opacity(0.6), radius: 1)
         .cornerRadius(15)
+        
     }
 }
