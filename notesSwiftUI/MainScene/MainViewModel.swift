@@ -13,11 +13,19 @@ class MainViewModel: ObservableObject {
     private var coreDataManager = CoreDataManager.shared
     
     @Published var noteEntitys: [NoteEntity] = []
-    @Published var isNewNote: Bool = false    
-    
+    @Published var isNewNote: Bool = false
+    private var isFirstLaunchApp: Bool
     
     init() {
-        updateData()
+        isFirstLaunchApp = AppStorageManager.shared.loadStatusFirstLaunchApp()
+        if isFirstLaunchApp {
+            defaultListNotes()
+            isFirstLaunchApp.toggle()
+            AppStorageManager.shared.saveStatusFirstLaunchApp(isFirstLaunchApp: isFirstLaunchApp)
+            coreDataManager.save()
+        } else {
+            updateData()
+        }
     }
     
     func addNote() {
@@ -35,4 +43,14 @@ class MainViewModel: ObservableObject {
         coreDataManager.save()
         updateData()
     }
+    
+    
+    func defaultListNotes() {
+        let defaultNote = NoteEntity(context: coreDataManager.viewContext)
+        defaultNote.textContent = "👋 Hello user. This is an example of a note. Swipe left to delete a note."
+        defaultNote.timestamp = Date()
+        defaultNote.title = Date().toString
+        noteEntitys = [defaultNote]
+    }
 }
+

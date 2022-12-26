@@ -17,7 +17,7 @@ class CoreDataManager: ObservableObject {
     }
     
     
-    init() {
+    private init() {
         persistentContainer = NSPersistentContainer(name: "NotesContainer")
         loadPersistentStores()
     }
