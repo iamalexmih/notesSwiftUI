@@ -14,6 +14,6 @@
 
 
 <p align="center">
-<img src="https://github.com/iamalexmih/notesSwiftUI/blob/main/screenShots/1_mainScreen.png" 
+<img src="https://github.com/iamalexmih/notesSwiftUI/blob/main/screenShots/mainScreen.png" 
 alt="screenshots main Screen App" width="1000" />
 </p>
